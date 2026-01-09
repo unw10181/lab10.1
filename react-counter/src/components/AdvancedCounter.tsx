@@ -33,6 +33,27 @@ const AdvancedCounter = () => {
   }, [count]);
 
   /* -----------------------------
+     Keyboard event listeners
+  ------------------------------ */
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "ArrowUp") {
+        setCount((prev) => prev + step);
+      }
+      if (event.key === "ArrowDown") {
+        setCount((prev) => prev - step);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+
+    // Cleanup on unmount
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [step]);
+
+  /* -----------------------------
      Handlers
   ------------------------------ */
   const increment = () => {
