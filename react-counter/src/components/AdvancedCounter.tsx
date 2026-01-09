@@ -64,17 +64,49 @@ const AdvancedCounter = () => {
     setCount((prev) => prev - step);
   };
 
-    const reset = () => {
+  const reset = () => {
     setCount(0);
     setHistory([0]);
     localStorage.removeItem("count");
   };
 
-return ();
+  return (
+    <div style={{ maxWidth: "400px", margin: "0 auto" }}>
+      <h2>Advanced Counter</h2>
 
+      <h3>Current Count: {count}</h3>
+
+      <button onClick={decrement}>Decrement</button>
+      <button onClick={increment}>Increment</button>
+      <button onClick={reset}>Reset</button>
+
+      <div style={{ marginTop: "1rem" }}>
+        <label>
+          Step Value:
+          <input
+            type="number"
+            value={step}
+            onChange={(e) => setStep(Number(e.target.value) || 1)}
+            style={{ marginLeft: "0.5rem" }}
+          />
+        </label>
+      </div>
+
+      <p>{status}</p>
+
+      <h4>Count History:</h4>
+      <ul>
+        {history.map((value, index) => (
+          <li key={index}>{value}</li>
+        ))}
+      </ul>
+
+      <p>
+        <strong>Tip:</strong> Use ArrowUp to increment and ArrowDown to
+        decrement.
+      </p>
+    </div>
+  );
 };
-
-
-
 
 export default AdvancedCounter;
