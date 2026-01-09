@@ -71,16 +71,20 @@ const AdvancedCounter = () => {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "0 auto" }}>
+    <div
+      className="counter-container"
+      style={{ maxWidth: "400px", margin: "0 auto" }}
+    >
       <h2>Advanced Counter</h2>
 
-      <h3>Current Count: {count}</h3>
+      <div className="counter-buttons">
+        <h3>Current Count: {count}</h3>
+        <button onClick={decrement}>Decrement</button>
+        <button onClick={increment}>Increment</button>
+        <button onClick={reset}>Reset</button>
+      </div>
 
-      <button onClick={decrement}>Decrement</button>
-      <button onClick={increment}>Increment</button>
-      <button onClick={reset}>Reset</button>
-
-      <div style={{ marginTop: "1rem" }}>
+      <div className="step-input" style={{ marginTop: "1rem" }}>
         <label>
           Step Value:
           <input
@@ -92,19 +96,25 @@ const AdvancedCounter = () => {
         </label>
       </div>
 
-      <p>{status}</p>
+      <div className="status">
+        <p>{status}</p>
+      </div>
 
-      <h4>Count History:</h4>
-      <ul>
-        {history.map((value, index) => (
-          <li key={index}>{value}</li>
-        ))}
-      </ul>
+      <div className="history">
+        <h4>Count History:</h4>
+        <ul>
+          {history.map((value, index) => (
+            <li key={index}>{value}</li>
+          ))}
+        </ul>
+      </div>
 
-      <p>
-        <strong>Tip:</strong> Use ArrowUp to increment and ArrowDown to
-        decrement.
-      </p>
+      <div className="tip">
+        <p>
+          <strong>Tip:</strong> Use ArrowUp to increment and ArrowDown to
+          decrement.
+        </p>
+      </div>
     </div>
   );
 };
