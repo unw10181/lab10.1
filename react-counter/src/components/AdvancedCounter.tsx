@@ -63,6 +63,18 @@ const AdvancedCounter = () => {
   const decrement = () => {
     setCount((prev) => prev - step);
   };
+
+    const reset = () => {
+    setCount(0);
+    setHistory([0]);
+    localStorage.removeItem("count");
+  };
+
+return ();
+
 };
+
+
+
 
 export default AdvancedCounter;
