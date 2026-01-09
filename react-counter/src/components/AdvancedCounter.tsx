@@ -15,6 +15,24 @@ const AdvancedCounter = () => {
   }, [count]);
 
   /* -----------------------------
+     Auto-save count to localStorage
+     (Simulated async save + cleanup)
+  ------------------------------ */
+  useEffect(() => {
+    setStatus("Saving...");
+
+    const saveTimeout = setTimeout(() => {
+      localStorage.setItem("count", JSON.stringify(count));
+      setStatus("Changes saved.");
+    }, 500);
+
+    // Cleanup if count changes before save completes
+    return () => {
+      clearTimeout(saveTimeout);
+    };
+  }, [count]);
+
+  /* -----------------------------
      Handlers
   ------------------------------ */
   const increment = () => {
