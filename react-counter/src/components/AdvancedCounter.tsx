@@ -8,6 +8,13 @@ const AdvancedCounter = () => {
   const [status, setStatus] = useState<string>("");
 
   /* -----------------------------
+     Update history when count changes
+  ------------------------------ */
+  useEffect(() => {
+    setHistory((prevHistory) => [...prevHistory, count]);
+  }, [count]);
+
+  /* -----------------------------
      Handlers
   ------------------------------ */
   const increment = () => {
