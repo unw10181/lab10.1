@@ -1,0 +1,96 @@
+/* Container */
+.counter-container {
+  max-width: 420px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 10px;
+  background-color: #f9fafb;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Headings */
+.counter-container h2 {
+  margin-bottom: 1rem;
+  color: #111827;
+}
+
+.counter-container h3 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  color: #2563eb;
+}
+
+/* Buttons */
+.counter-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.counter-buttons button {
+  flex: 1;
+  padding: 0.6rem 0;
+  border: none;
+  border-radius: 6px;
+  background-color: #2563eb;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.counter-buttons button:hover {
+  background-color: #1d4ed8;
+}
+
+.counter-buttons button:nth-child(3) {
+  background-color: #dc2626;
+}
+
+.counter-buttons button:nth-child(3):hover {
+  background-color: #b91c1c;
+}
+
+/* Step input */
+.step-input {
+  margin-bottom: 1rem;
+}
+
+.step-input input {
+  width: 60px;
+  padding: 0.3rem;
+  margin-left: 0.5rem;
+  text-align: center;
+}
+
+/* Status text */
+.status {
+  font-size: 0.9rem;
+  color: #16a34a;
+  margin-bottom: 1rem;
+}
+
+/* History list */
+.history {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+.history ul {
+  padding-left: 1.2rem;
+}
+
+.history li {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+/* Tip text */
+.tip {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+}
